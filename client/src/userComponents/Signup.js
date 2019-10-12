@@ -37,11 +37,19 @@ class Signup extends React.Component {
         this.setState(initialState)
     }
 
-   ifError = () => {
-       if (this.props.errors) {
-           
-       }
-   }
+    
+    renderErrors = (props) => {
+        console.log(this.props.user.current.errors)
+        if (this.props.user.current.errors) {
+            const email = `Email ${this.props.user.current.errors.email}`
+            const password = `Password ${this.props.user.current.errors.password}`
+            return <p> {email} {password} </p>
+        } 
+    }
+
+   
+
+    
 
 
     render() {
@@ -53,6 +61,7 @@ class Signup extends React.Component {
                 <input type='text' placeholder='Password' name='password' value={this.state.value} onChange={this.onChange} />
                 <input type='submit' />
                 </form>
+                {this.renderErrors()}
             </div>
         )
     }
