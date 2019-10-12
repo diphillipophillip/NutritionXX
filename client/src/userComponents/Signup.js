@@ -37,11 +37,17 @@ class Signup extends React.Component {
         this.setState(initialState)
     }
 
+   ifError = () => {
+       if (this.props.errors) {
+           
+       }
+   }
+
 
     render() {
         return (
             <div>
-                <form onSubmit={this.onSubmit}>
+                <form onSubmit={this.onSubmit} >
                 <input type='text' placeholder='Username' name='username' value={this.state.value} onChange={this.onChange}/>
                 <input type='text' placeholder='Email' name='email' value={this.state.value} onChange={this.onChange} />
                 <input type='text' placeholder='Password' name='password' value={this.state.value} onChange={this.onChange} />
@@ -55,7 +61,7 @@ class Signup extends React.Component {
 }
 
 
-const mapStateToProps = state => ({ user: state.current })
+const mapStateToProps = state => ({ user: state.user })
 
 
 

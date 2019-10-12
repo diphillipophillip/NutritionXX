@@ -1,12 +1,16 @@
-export default function usersReducer (state = {current: [], isLoggedIn: false }, action) {
+export default function usersReducer (state = {current: [], errors: [], isLoggedIn: false }, action) {
     switch(action.type) {
 
         case 'POST_SIGN_UP':
             console.log('Post Signup')
 
         case 'SIGN_UP':
-            console.log(action.payload)
+            
+            if (action.payload !== undefined && !action.payload.errors) {
             return { ...state, current: action.payload, isLoggedIn: true }
+            } else {
+                return { ...state, errors: action.paylaod }
+            }
 
 
         default: 
