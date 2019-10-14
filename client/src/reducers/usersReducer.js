@@ -12,6 +12,16 @@ export default function usersReducer (state = {current: [], isLoggedIn: false },
                 return {...state, current: action.payload, isLoggedIn: false }
             }
 
+        case 'POST_LOGIN':
+            console.log('Post Login')
+
+
+        case 'LOGIN':
+            if (action.payload !== undefined && !action.payload.errors) {
+                return {...state, current: action.payload, isLoggedIn: true}
+            } else if (action.payload !== undefined && action.payload.errors) {
+                return {...state, current: action.payload, isLoggedIn: false}
+            }
 
         default: 
             return state 

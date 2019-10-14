@@ -12,7 +12,7 @@ import rootReducer from './reducers/index'
 import Home from '../src/userComponents/Home'
 import Login from '../src/userComponents/Login'
 import Signup from '../src/userComponents/Signup'
-import Dashboard from './Containers/Dashboard';
+import Dashboard from './containers/Dashboard'
 
 
 const store = createStore(rootReducer, applyMiddleware(thunk))

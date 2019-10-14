@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../userComponents/Navbar'
-
+import AddPost from '../postComponents/AddPost'
+import { connect } from 'react-redux'
 
 class Dashboard extends React.Component {
 
@@ -8,6 +9,7 @@ class Dashboard extends React.Component {
         return (
             <div>
                 < Navbar />
+                < AddPost user={this.props.user} />
             </div>
         )
     }
@@ -15,5 +17,6 @@ class Dashboard extends React.Component {
 
 }
 
+const mapStateToProps = state => ({ user: state.user })
 
-export default Dashboard 
+export default connect(mapStateToProps)(Dashboard) 

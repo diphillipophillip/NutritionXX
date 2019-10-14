@@ -40,10 +40,12 @@ class Signup extends React.Component {
     
     renderErrors = (props) => {
         console.log(this.props.user.current.errors)
-        if (this.props.user.current.errors) {
+        if (this.props.user.current.errors && this.props.user.current.errors !== undefined ) {
             const email = `Email ${this.props.user.current.errors.email}`
-            const password = `Password ${this.props.user.current.errors.password}`
-            return <p> {email} {password} </p>
+            const password = `Password ${this.props.user.current.errors.password[0]}`
+            const username = `Username ${this.props.user.current.errors.username}`
+            return <p> {email} {password} {username} </p>
+            
         } 
     }
 
