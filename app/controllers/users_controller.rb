@@ -13,7 +13,19 @@ class UsersController < ApplicationController
         else 
             render json: {errors: @user.errors}
         end 
-        binding.pry
+       
+    end 
+
+    def login 
+
+        email = params[:email]
+        password = params[:password]
+        @user = User.find_by_email(email)
+            if @user && @user.authenticate(password)
+                render json: @user
+            else 
+                render json: {errors: "The Email or Password you entered was incorrect"}
+            end 
     end 
 
 

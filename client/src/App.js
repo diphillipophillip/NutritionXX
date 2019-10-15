@@ -10,6 +10,7 @@ class App extends React.Component {
     if (this.props.user.isLoggedIn === true ) {
       return < Redirect to='/dashboard' />
     } 
+    console.log(this.props)
   }
 
 
@@ -26,6 +27,8 @@ class App extends React.Component {
 
 
 
-const mapStateToProps = state => ({ user: state.user })
+const mapStateToProps = state => ({ 
+  user: state.user
+ })
 
 export default connect(mapStateToProps)(App);
