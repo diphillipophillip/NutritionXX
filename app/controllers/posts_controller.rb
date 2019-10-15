@@ -8,7 +8,14 @@ class PostsController < ApplicationController
         @user.posts << @post 
         
         render json: @post
-        binding.pry
+       
+    end 
+
+    def index 
+        @posts = Post.all
+        render json: @posts
+        
+
     end 
 
 

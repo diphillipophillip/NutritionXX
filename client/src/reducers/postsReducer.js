@@ -1,4 +1,4 @@
-export default function postsReducer (state = { current: [], isLoggedIn: false }, action ) {
+export default function postsReducer (state = { current: [], all: [], isLoggedIn: false }, action ) {
 
     switch(action.type) {
         case 'POST_ADD':
@@ -7,6 +7,14 @@ export default function postsReducer (state = { current: [], isLoggedIn: false }
         
         case 'ADD_POST':
             return {...state,  current: action.payload, isLoggedIn: true}
+
+        case 'POST_ALL':
+            
+            console.log('Getting All Posts')
+
+        case 'SHOW_ALL_POSTS':
+            
+            return { ...state, all: action.payload }
 
 
         default: 
