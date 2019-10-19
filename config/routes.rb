@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get '/addpost', to: 'posts#create'
   get '/posts', to: 'posts#index'
   get '/searchmeal', to: 'meals#search'
+  get '/findcalories', to: 'calories#search'
   
 end

@@ -3,7 +3,7 @@ import Navbar from '../userComponents/Navbar'
 import AddPost from '../postComponents/AddPost'
 import { connect } from 'react-redux'
 import MealContainer from './MealContainer'
-
+import CalorieContainer from './CalorieContainer'
 
 class Dashboard extends React.Component {
 
@@ -13,7 +13,7 @@ class Dashboard extends React.Component {
                 < Navbar />
                 < AddPost user={this.props.user} />
                 < MealContainer />
-                
+                < CalorieContainer />
             </div>
         )
     }
