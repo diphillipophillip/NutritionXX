@@ -9,7 +9,7 @@ class PostContainer extends React.Component {
     render() {
         return (
             <div>
-                < Posts allPosts={this.props.allPosts} showPosts={this.props.showPosts}/>
+                <Posts allPosts={this.props.allPosts} showPosts={this.props.showPosts}/>
             </div>
         )
     }

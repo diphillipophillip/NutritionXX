@@ -7,7 +7,7 @@ class DisplayMeal extends React.Component {
 
     
     createMeal = () => {
-        console.log(this.props.meal.current.foods)
+        
         let fakeState = {}
 
         if (this.props.meal.current.foods) {

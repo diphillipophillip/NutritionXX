@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom'
 import PostContainer from './containers/PostContainer'
 import { allPosts } from './actions/allPosts'
 import DisplayMeal from './containers/DisplayMeal'
+import DisplayCalories from './containers/DisplayCalories'
 
 class App extends React.Component {
 
@@ -26,6 +27,7 @@ class App extends React.Component {
         {this.renderDash()}
         < PostContainer allPosts={this.props.allPosts} showPosts={this.props.post}/>
         < DisplayMeal />
+        < DisplayCalories />
       </div>
     )
   }

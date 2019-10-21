@@ -13,7 +13,7 @@ export default function postsReducer (state = { current: [], all: [], isLoggedIn
             console.log('Getting All Posts')
 
         case 'SHOW_ALL_POSTS':
-            
+            console.log(action.payload)
             return { ...state, all: action.payload }
 
 

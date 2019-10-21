@@ -32,7 +32,7 @@ class SearchCalories extends React.Component {
         return (
             <div>
                 <form onSubmit={this.onSubmit}>
-                <input type='text' name='input' value={this.state.value} onChange={this.onChange} placeholder='Find Calories'/>
+                <input type='text' name='input' value={this.state.input} onChange={this.onChange} placeholder='Find Calories'/>
                 <input type='submit' />
                 </form>
             </div>
