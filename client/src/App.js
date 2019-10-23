@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux' 
 import { Redirect } from 'react-router-dom'
 import PostContainer from './containers/PostContainer'
-import { allPosts } from './actions/allPosts'
 import DisplayMeal from './containers/DisplayMeal'
 import DisplayCalories from './containers/DisplayCalories'
 
@@ -15,7 +14,9 @@ class App extends React.Component {
   renderDash = () => {
     if (this.props.user.isLoggedIn === true ) {
       return < Redirect to='/dashboard' />
-    } 
+    } else {
+      return < Redirect to='/' />
+    }
   }
 
 
@@ -25,9 +26,10 @@ class App extends React.Component {
     return (
       <div>
         {this.renderDash()}
-        < PostContainer allPosts={this.props.allPosts} showPosts={this.props.post}/>
+        < PostContainer current={this.props.post.current} />
         < DisplayMeal />
         < DisplayCalories />
+        
       </div>
     )
   }
@@ -42,4 +44,4 @@ const mapStateToProps = state => ({
   post: state.post
  })
 
-export default connect(mapStateToProps, {allPosts})(App);
+export default connect(mapStateToProps)(App);

@@ -4,18 +4,21 @@ export default function postsReducer (state = { current: [], all: [], isLoggedIn
         case 'POST_ADD':
             console.log('Post Add')
 
-        
         case 'ADD_POST':
-            return {...state,  current: action.payload, isLoggedIn: true}
-
-        case 'POST_ALL':
             
-            console.log('Getting All Posts')
+            if (action.payload !== undefined ) {
+            return {...state,  current: action.payload, isLoggedIn: true }
+            }
 
-        case 'SHOW_ALL_POSTS':
-            console.log(action.payload)
-            return { ...state, all: action.payload }
+        case 'POST_ALL': 
+            console.log('hi')
 
+        case 'ALL_POSTS':
+            
+            if ( action.payload !== undefined ) {
+            return {...state, all: action.payload}
+            }
+            
 
         default: 
             return state 

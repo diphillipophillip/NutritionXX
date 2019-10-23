@@ -7,7 +7,7 @@ export default function mealsReducer ( state = { current: [], isLoggedIn: false 
 
         case 'SEARCH_RESULTS':
             if (action.payload !== undefined) {
-            return {...state, current: action.payload }
+            return {...state, current: action.payload, isLoggedIn: true }
             }
         
 

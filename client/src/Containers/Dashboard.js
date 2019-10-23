@@ -7,6 +7,8 @@ import CalorieContainer from './CalorieContainer'
 
 class Dashboard extends React.Component {
 
+    
+
     render() {
         return (
             <div>
@@ -21,6 +23,9 @@ class Dashboard extends React.Component {
 
 }
 
-const mapStateToProps = state => ({ user: state.user })
+const mapStateToProps = state => ({ 
+    user: state.user,
+    post: state.post
+ })
 
 export default connect(mapStateToProps)(Dashboard) 
