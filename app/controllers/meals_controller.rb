@@ -31,5 +31,12 @@ class MealsController < ApplicationController
         render json: response
         
     end 
+
+    def save 
+        data = params[:data]
+        newData = JSON.parse(data)
+        binding.pry
+
+    end 
   
 end 

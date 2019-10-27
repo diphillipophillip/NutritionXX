@@ -21,6 +21,7 @@ class DisplayMeal extends React.Component {
 
         fakeState['food_names'] = names 
         fakeState['consumed_at'] = consumedAt
+        fakeState['user_id'] = this.props.user.current.id
 
         if (this.props.meal.current.foods[0]) {
             Object.keys(this.props.meal.current.foods[0]).map((item) => {
@@ -39,7 +40,7 @@ class DisplayMeal extends React.Component {
 
 
         if (this.props.meal.current.foods[0]) {
-            return <Meal key={Math.random(1*10)} text={fakeState}  />
+            return <Meal key={Math.random(1*10)} text={fakeState} />
             
             }
 
@@ -62,7 +63,8 @@ class DisplayMeal extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    meal: state.meal
+    meal: state.meal,
+    user: state.user
 })
 
 

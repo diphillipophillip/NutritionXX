@@ -30,10 +30,12 @@ class AddPost extends React.Component {
 
    
 
+   
+
     render() {
         return (
             <div>
-                    <form onSubmit={this.onSubmit} >
+                    <form onSubmit={this.onSubmit}  >
                     <input type='text' placeholder='Add Post' name='post' value={this.state.post} onChange={this.onChange} />
                     <input type='submit' />
                 </form>

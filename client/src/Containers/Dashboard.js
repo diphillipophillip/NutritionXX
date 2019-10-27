@@ -4,8 +4,20 @@ import AddPost from '../postComponents/AddPost'
 import { connect } from 'react-redux'
 import MealContainer from './MealContainer'
 import CalorieContainer from './CalorieContainer'
+import {allPosts} from '../actions/allPosts'
 
 class Dashboard extends React.Component {
+
+
+    componentDidMount() {
+        this.props.allPosts()
+    }
+
+    renderPosts = () => {
+        if (this.props.post.all !== undefined) {
+            return this.props.post.all.map(post => <p key={Math.random(1*1000)}>{post.user.username}: {post.post} </p>)
+        }
+    }
 
     
 
@@ -28,4 +40,4 @@ const mapStateToProps = state => ({
     post: state.post
  })
 
-export default connect(mapStateToProps)(Dashboard) 
+export default connect(mapStateToProps, {allPosts})(Dashboard) 

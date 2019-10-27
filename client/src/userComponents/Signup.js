@@ -1,6 +1,7 @@
 import React from 'react' 
 import { connect } from 'react-redux'
 import { signup } from '../actions/signup'
+import { allPosts } from '../actions/allPosts'
 
 
 const initialState = {
@@ -13,6 +14,12 @@ const initialState = {
 
 
 class Signup extends React.Component {
+
+
+
+    componentDidMount() {
+        this.props.allPosts()
+    }
 
     constructor(props) {
         super(props) 
@@ -39,7 +46,6 @@ class Signup extends React.Component {
 
     
     renderErrors = (props) => {
-        console.log(this.props.user.current.errors)
         if (this.props.user.current.errors && this.props.user.current.errors !== undefined ) {
             const email = `Email ${this.props.user.current.errors.email}`
             const password = `Password ${this.props.user.current.errors.password[0]}`
@@ -47,6 +53,12 @@ class Signup extends React.Component {
             return <p> {email} {password} {username} </p>
             
         } 
+    }
+
+    renderPosts = () => {
+        if (this.props.post.all !== undefined) {
+            return this.props.post.all.map(post => <p key={Math.random(1*10000)}>{post.user.username}: {post.post} </p>)
+        }
     }
 
    
@@ -57,6 +69,7 @@ class Signup extends React.Component {
     render() {
         return (
             <div>
+                {this.renderPosts()}
                 <form onSubmit={this.onSubmit} >
                 <input type='text' placeholder='Username' name='username' value={this.state.value} onChange={this.onChange}/>
                 <input type='text' placeholder='Email' name='email' value={this.state.value} onChange={this.onChange} />
@@ -72,8 +85,11 @@ class Signup extends React.Component {
 }
 
 
-const mapStateToProps = state => ({ user: state.user })
+const mapStateToProps = state => ({ 
+    user: state.user,
+    post: state.post
+ })
 
 
 
-export default connect(mapStateToProps, {signup})(Signup)
+export default connect(mapStateToProps, {signup, allPosts})(Signup)

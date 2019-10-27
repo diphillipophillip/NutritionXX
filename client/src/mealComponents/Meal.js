@@ -1,5 +1,7 @@
 import React from 'react'
 import moment from 'moment'
+import { saveMeal } from '../actions/saveMeal'
+import { connect } from 'react-redux'
 
 const Meal = props => {
 
@@ -10,13 +12,17 @@ const Meal = props => {
     let date = props.text.consumed_at
     const newDate = moment(new Date, date).format('MMMM Do YYYY, h:mm:ss a') 
 
-    
+    const onClick = () => {
+        var data = props.text
+        console.log(data)
+        var string = JSON.stringify(data)
+        props.saveMeal(string)
+    }
 
     return (
-        
-        
+
         <div>
-        
+    
         <label>Date</label>
         <h5>{newDate}</h5>
       
@@ -58,10 +64,9 @@ const Meal = props => {
         <label>Protien</label>
         <li>{props.text.nf_protein}</li>
 
-        
-        
         </ul>
 
+        <button onClick={onClick}>Save</button>
     
         </div> 
         
@@ -71,4 +76,4 @@ const Meal = props => {
 
 }
 
-export default Meal 
+export default connect(null, {saveMeal})(Meal)

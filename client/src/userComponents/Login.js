@@ -1,10 +1,22 @@
 import React from 'react'
 import { login } from '../actions/login'
 import { connect } from 'react-redux'
-
+import { allPosts } from '../actions/allPosts'
 
 
 class Login extends React.Component {
+
+
+    componentDidMount() {
+        this.props.allPosts()
+    }
+
+    renderPosts = () => {
+        if (this.props.post.all !== undefined) {
+            return this.props.post.all.map(post => <p key={Math.random(1*10000)}>{post.user.username}: {post.post}</p>)
+        }
+    }
+
 
     constructor() {
         super()
@@ -48,6 +60,7 @@ class Login extends React.Component {
     render() {
         return (
             <div>
+                {this.renderPosts()}
                 <form onSubmit={this.onSubmit}>
                     <input type='text' placeholder='email' name='email' value={this.state.value} onChange={this.onChange} />
                     <input type='text' placeholder='password' name='password' value={this.state.value} onChange={this.onChange} />
@@ -62,6 +75,9 @@ class Login extends React.Component {
 }
 
 
-const mapStateToProps = state => ({ user: state.user })
+const mapStateToProps = state => ({ 
+    user: state.user,
+    post: state.post
+     })
 
-export default connect(mapStateToProps, {login})(Login)
+export default connect(mapStateToProps, {login, allPosts})(Login)

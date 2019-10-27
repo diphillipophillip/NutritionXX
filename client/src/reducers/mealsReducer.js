@@ -9,6 +9,11 @@ export default function mealsReducer ( state = { current: [], isLoggedIn: false 
             if (action.payload !== undefined) {
             return {...state, current: action.payload, isLoggedIn: true }
             }
+
+        case 'POST_SAVE':
+            console.log('Post Save')
+
+        
         
 
 
