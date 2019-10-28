@@ -20,8 +20,10 @@ class DisplayMeal extends React.Component {
         })
 
         fakeState['food_names'] = names 
-        fakeState['consumed_at'] = consumedAt
+        fakeState['consumed_at'] = consumedAt[0]
+        fakeState['date'] = consumedAt[0]
         fakeState['user_id'] = this.props.user.current.id
+        console.log(fakeState)
 
         if (this.props.meal.current.foods[0]) {
             Object.keys(this.props.meal.current.foods[0]).map((item) => {

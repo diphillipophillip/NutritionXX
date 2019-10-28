@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 
-
+gem 'strftime', '~> 1.0'
 gem 'faraday', '~> 0.9.2'
 gem 'dotenv-rails'
 gem 'rack-cors'

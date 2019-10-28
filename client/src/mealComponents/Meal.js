@@ -9,8 +9,8 @@ const Meal = props => {
     let names = props.text.food_names 
     let newNames = names.join( ' and ')
 
-    let date = props.text.consumed_at
-    const newDate = moment(new Date, date).format('MMMM Do YYYY, h:mm:ss a') 
+    let date = props.text.date
+    const newDate = moment(new Date, date).format('MMMM Do YYYY, h:mm:ss a')
 
     const onClick = () => {
         var data = props.text

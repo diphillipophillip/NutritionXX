@@ -4,4 +4,5 @@ class User < ApplicationRecord
     validates :password, presence: true, :length => {:within => 4..9}
     validates :username, uniqueness: true
     has_many :posts
+    has_many :meals
 end

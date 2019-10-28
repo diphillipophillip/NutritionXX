@@ -18,6 +18,20 @@ ActiveRecord::Schema.define(version: 2019_10_19_193855) do
   end
 
   create_table "meals", force: :cascade do |t|
+    t.string "date"
+    t.string "name"
+    t.integer "total_calories"
+    t.integer "calories_from_fat"
+    t.integer "total_fat"
+    t.integer "saturated_fat"
+    t.integer "cholesterol"
+    t.integer "sodium"
+    t.integer "potassium"
+    t.integer "total_carbohydrates"
+    t.integer "dietary_fiber"
+    t.integer "sugar"
+    t.integer "protein"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
