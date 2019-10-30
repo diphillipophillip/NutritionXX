@@ -14,15 +14,21 @@ const Meal = props => {
 
     const onClick = () => {
         var data = props.text
-        console.log(data)
         var string = JSON.stringify(data)
         props.saveMeal(string)
     }
 
+    const saved = () => {
+        if (props.meal.saved.length > 0) {
+            return <p>{props.meal.saved}</p>
+        }
+    }
+
     return (
 
+        
         <div>
-    
+
         <label>Date</label>
         <h5>{newDate}</h5>
       
@@ -67,7 +73,9 @@ const Meal = props => {
         </ul>
 
         <button onClick={onClick}>Save</button>
-    
+
+        {saved()}
+
         </div> 
         
        
@@ -76,4 +84,9 @@ const Meal = props => {
 
 }
 
-export default connect(null, {saveMeal})(Meal)
+
+const mapStateToProps = state => ({
+    meal: state.meal
+})
+
+export default connect(mapStateToProps, {saveMeal})(Meal)

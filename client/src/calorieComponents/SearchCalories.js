@@ -5,8 +5,8 @@ import { connect } from 'react-redux'
 class SearchCalories extends React.Component {
 
 
-    constructor() {
-        super() 
+    constructor(props) {
+        super(props) 
         this.state = {
             input: ''
         }
@@ -15,15 +15,14 @@ class SearchCalories extends React.Component {
     onChange = event => {
         this.setState({
             [event.target.name]: event.target.value
-        }) 
-        
+        })
     }
 
     onSubmit = event => {
         event.preventDefault()
         this.props.searchCals(this.state)
         this.setState = ({
-            input: ''
+            [event.target.name]: event.target.value
         })
     }
 

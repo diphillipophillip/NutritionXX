@@ -46,7 +46,23 @@ class MealsController < ApplicationController
         @user_id = newData['user_id']
         @user = User.find_by_id(@user_id)
         @user.meals << @meal
+
+        render json: @meal
+    
+    end 
+
+    def all 
+
+        @user_id = params[:user_id]
+        @user = User.find_by_id(@user_id)
+        render json: @user.meals 
+
+
         binding.pry
+       
+        
+
+
     end 
 
 end 

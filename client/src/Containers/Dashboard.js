@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import MealContainer from './MealContainer'
 import CalorieContainer from './CalorieContainer'
 import {allPosts} from '../actions/allPosts'
+import ViewAllMeals from '../mealComponents/ViewAllMeals'
 
 class Dashboard extends React.Component {
 
@@ -28,6 +29,7 @@ class Dashboard extends React.Component {
                 < AddPost user={this.props.user} />
                 < MealContainer />
                 < CalorieContainer />
+                < ViewAllMeals user={this.props.user.current.id}/>
             </div>
         )
     }

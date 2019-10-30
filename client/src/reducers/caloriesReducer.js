@@ -5,6 +5,7 @@ export default function caloriesReducer ( state = {current: [], isLoggedIn: fals
             console.log('Post Search')
 
         case 'GET_CALORIES':
+            console.log(action.payload)
             return { ...state, current: action.payload }
 
         default: 
