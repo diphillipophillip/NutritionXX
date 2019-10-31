@@ -58,10 +58,14 @@ class MealsController < ApplicationController
         render json: @user.meals 
 
 
-        binding.pry
-       
-        
+    end 
 
+
+    def show 
+
+        @id = params[:id]
+        @meal = Meal.find_by_id(@id)
+        binding.pry
 
     end 
 

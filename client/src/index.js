@@ -26,6 +26,7 @@ ReactDOM.render(
             < Route exact path='/login' component={Login} />
             < Route exact path='/signup' component={Signup} />
             < Route exact path='/dashboard' component={Dashboard} />
+
         </Provider>
     </Router>,
  document.getElementById('root'));

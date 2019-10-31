@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   get '/findcalories', to: 'calories#search'
   get '/save', to: 'meals#save'
   get '/all', to: 'meals#all'
+  get '/show', to: 'meals#show'
+  
   
 end

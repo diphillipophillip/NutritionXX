@@ -1,4 +1,4 @@
-export default function mealsReducer ( state = { current: [], saved: [], isLoggedIn: false }, action ) {
+export default function mealsReducer ( state = { current: [], saved: [], all: [], isLoggedIn: false }, action ) {
 
     switch(action.type) {
 
@@ -23,8 +23,12 @@ export default function mealsReducer ( state = { current: [], saved: [], isLogge
             console.log('Post All Meals')
 
         case 'ALL_MEALS':
-            console.log(action.payload)
+            
+            if (action.payload) {
+                return {...state, all: action.payload}
+            }
 
+    
 
         default:
             return state 
