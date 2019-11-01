@@ -67,7 +67,7 @@ const Meal = props => {
         <label>Sugars</label>
         <li>{props.text.nf_sugars}</li>
 
-        <label>Protien</label>
+        <label>Protein</label>
         <li>{props.text.nf_protein}</li>
 
         </ul>

@@ -7,6 +7,7 @@ import CalorieContainer from './CalorieContainer'
 import {allPosts} from '../actions/allPosts'
 import ViewAllMeals from '../mealComponents/ViewAllMeals'
 import ShowMeal from '../mealComponents/ShowMeal'
+import ShowingMeal from '../mealComponents/ShowingMeal'
 
 
 
@@ -32,6 +33,13 @@ class Dashboard extends React.Component {
         }
     }
 
+    renderMeal = () => {
+        if (this.props.meal.show.length !== 0) {
+            let meal = this.props.meal.show 
+            return <ShowingMeal text={meal} />
+        }
+    }
+
    
 
 
@@ -39,6 +47,7 @@ class Dashboard extends React.Component {
     render() {
         return (
             <div>
+                {this.renderMeal()}
                 {this.renderMeals()}
                 < Navbar />
                 < AddPost user={this.props.user} />

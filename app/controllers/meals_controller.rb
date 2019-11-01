@@ -65,7 +65,8 @@ class MealsController < ApplicationController
 
         @id = params[:id]
         @meal = Meal.find_by_id(@id)
-        binding.pry
+        render json: @meal
+        
 
     end 
 
