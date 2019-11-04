@@ -1,0 +1,43 @@
+body {
+    background-image: url('bg.jpg');
+    background-size: cover;
+}
+
+/* Width Half */
+
+.width-half {
+    width: 50% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+.width-quarter {
+    width: 25% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .feed {
+      width: 100%;
+      margin-top: 20px;
+      padding: 20px;
+      height: 175px;
+      overflow: scroll;
+  }
+
+  .nav {
+    width: 100%;
+    background-color: black; 
+    height: 75px;
+  }
+
+  .logo {
+    width: 300px;
+    margin: auto;
+  }
+
+  .user-form {
+      margin-top: 5%;
+  }
+  
+  

@@ -59,13 +59,23 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div>
-                {this.renderPosts()}
-                <form onSubmit={this.onSubmit}>
-                    <input type='text' placeholder='email' name='email' value={this.state.value} onChange={this.onChange} />
-                    <input type='text' placeholder='password' name='password' value={this.state.value} onChange={this.onChange} />
-                    <input type='submit' />
-                </form>
+            <div> 
+                <div className="user-form">
+                    <div className='width-quarter'>
+                        < h2 className='mb-3 font-weight-bold text-light' > Login Here </h2>
+                       
+                        <form onSubmit={this.onSubmit}>
+                            <div className='form-group'>
+                            <input type='email' className='form-control' placeholder='email' name='email' value={this.state.value} onChange={this.onChange} />
+                            </div>
+
+                            <div className='form-group'>
+                            <input type='password' className='form-control' placeholder='password' name='password' value={this.state.value} onChange={this.onChange} />
+                            </div>
+                            <input type='submit' className='btn btn-outline-light font-weight-bold'/>
+                        </form>
+                    </div>
+                </div>
                 {this.renderErrors()}
             </div>
         )

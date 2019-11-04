@@ -21,11 +21,18 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div>
-            {this.renderPosts()}
-            < NavLink to='/login'><button>Login</button> </NavLink>
-            < NavLink to='/signup'><button>SignUp</button> </ NavLink>
+            <div className="container">
+                <div className="text-center mt-3">
+                    < NavLink to='/login'><button className="btn btn-outline-light" ><strong>Login</strong></button> </NavLink>
+                    < NavLink to='/signup'><button className="btn btn-light">SignUp</button> </ NavLink>
+                </div >
+                <div className="width-half">
+                    <div className="feed bg-light" >
+                    {this.renderPosts()}
+                    </div>
+                </div>
             </div>
+          
         )
     }
 

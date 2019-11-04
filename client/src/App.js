@@ -7,9 +7,6 @@ import DisplayCalories from './containers/DisplayCalories'
 
 class App extends React.Component {
 
-
-
-
   
   renderDash = () => {
     if (this.props.user.isLoggedIn === true ) {
@@ -24,7 +21,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div >
+        <div className="nav">
+            <img className="logo" src="logo.png" />
+        </div>
         {this.renderDash()}
         < PostContainer current={this.props.post.current} />
         < DisplayMeal />
